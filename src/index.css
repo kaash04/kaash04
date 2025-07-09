@@ -1,0 +1,324 @@
+@import url("https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body,
+* {
+  font-family: "Quantico", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.05rem;
+}
+
+* {
+  color: rgba(255, 255, 255, 0.87);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.page {
+  display: flex;
+  min-height: 100dvh;
+  min-width: 100vw;
+  background-color: #242424;
+  /* Remove padding if not needed */
+}
+
+.sidemenuContainer {
+  height: 100dvh;
+  width: fit-content;
+  padding: 5px;
+  margin: 0 5px;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.contentContainer {
+  flex: 1 1 0%;
+  min-width: 70dvw;
+  padding: 5px;
+  margin: 0 5px;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.sidemenuItem {
+  margin: 10px 0;
+  padding: 4px 0;
+  border: 1px solid #fff;
+  box-sizing: border-box;
+  min-inline-size: 0;
+  /* Don't grow by default */
+  flex: 0 0 auto;
+}
+
+.sidemenuItem legend {
+  padding: 0 8px;
+  font-size: 1em;
+  margin: 0;
+}
+
+.experienceEntry {
+  cursor: pointer;
+  padding: 6px 10px;
+  transition: background 0.2s, color 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.experienceEntry.active {
+  background-color: rgba(0, 123, 255, 0.08);
+  color: #007bff;
+  border-top: 1px solid #007bff;
+  border-bottom: 1px solid #007bff;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.experienceEntry.active .roleFlex {
+  color: #f1f1f1;
+}
+
+.experienceFlex {
+  display: flex;
+  align-items: center;
+  font-family: monospace;
+  width: 100%;
+}
+
+.roleFlex {
+  flex: 1;
+  text-align: right;
+  padding-right: 0.5ch;
+}
+
+.atFlex {
+  flex: 0 0 2ch;
+  text-align: center;
+}
+
+.companyFlex {
+  flex: 1;
+  text-align: left;
+  padding-left: 0.5ch;
+}
+
+.contentBox {
+  flex: 1 1 0%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+  padding: 5px 15px;
+  border: 1px solid #fff;
+  box-sizing: border-box;
+}
+
+.contentBox legend {
+  padding: 0 8px;
+  font-size: 1em;
+  margin: 0;
+}
+
+.scrollableList {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #fff #222;
+}
+
+/* Content */
+.education-section {
+  padding: 1rem;
+}
+
+.education-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  row-gap: 0.5rem;
+  column-gap: 8rem;
+  margin-bottom: 10px;
+}
+
+.education-header h2 {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.education-date {
+  font-size: 1rem;
+  white-space: nowrap;
+  color: #447D9B;
+  text-decoration: none;
+}
+
+.educationPara {
+  margin: 15px 0;
+}
+
+/* Hamburger styles */
+.hamburger {
+  display: none;
+  position: fixed;
+  bottom: 18px;
+  right: 18px;
+  left: auto;
+  top: auto;
+  z-index: 1001;
+  background: #181818cc;
+  border: 1px solid #333;
+  border-radius: 8px;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 3px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  transition: background 0.15s, box-shadow 0.15s;
+}
+.hamburger:active,
+.hamburger:focus {
+  background: #232323;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.28);
+}
+.hamburger-bar {
+  display: block;
+  width: 20px;
+  height: 2.5px;
+  background: #e0e0e0;
+  border-radius: 2px;
+  margin: 3px 0;
+  transition: all 0.15s cubic-bezier(0.4, 2, 0.6, 1);
+}
+
+.hamburger.open .hamburger-bar:nth-child(1) {
+  transform: translateY(6px) translateX(-2.5px) rotate(-32deg);
+}
+.hamburger.open .hamburger-bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open .hamburger-bar:nth-child(3) {
+  transform: translateY(-6px) translateX(-2.5px) rotate(32deg);
+}
+
+/* Desktop: skills section scrolls if too tall */
+@media (min-width: 901px) {
+  .scrollableSkillsList {
+    max-height: 100dvh;
+    overflow-y: auto;
+    flex: 1 1 0;
+    min-height: 0;
+  }
+  /* Only the skills fieldset should grow */
+  .sidemenuItem[style*="flex-direction: column"] {
+    flex: 1 1 0 !important;
+    min-height: 0 !important;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 900px) {
+  .sidemenuContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100dvh;
+    max-height: 100dvh;
+    width: 100vw;
+    max-width: 100vw;
+    background: #181818;
+    z-index: 1000;
+    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.18s ease, opacity 0.15s linear;
+    transform: translateX(-100%);
+    opacity: 0;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+  }
+  .sidemenuContainer.open {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .sidemenuItem {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+  .contentContainer {
+    min-width: 0;
+    width: 100vw;
+    margin: 0;
+    padding: 10px 0 0 0;
+  }
+  .scrollableSkillsList {
+    flex: 1 1 0;
+    min-height: 0;
+    overflow-y: auto;
+    max-height: calc(100dvh - 16px);
+  }
+  .contentBox {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .sidemenuContainer {
+    width: 95vw;
+    max-width: 100vw;
+  }
+  .contentContainer {
+    padding: 5px 0 0 0;
+  }
+}
+
+/* Themed scrollbar for skills section */
+.scrollableSkillsList {
+  scrollbar-width: thin;
+  scrollbar-color: #e0e0e0 transparent;
+}
+.scrollableSkillsList::-webkit-scrollbar {
+  width: 8px;
+  background: transparent;
+}
+.scrollableSkillsList::-webkit-scrollbar-thumb {
+  background: #e0e0e0;
+  border-radius: 6px;
+  min-height: 24px;
+  transition: background 0.2s;
+}
+.scrollableSkillsList::-webkit-scrollbar-thumb:hover {
+  background: #ffffff;
+}
+.scrollableSkillsList::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollableSkillsList::-webkit-scrollbar-button {
+  display: none;
+  height: 0;
+  width: 0;
+}
