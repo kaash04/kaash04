@@ -28,6 +28,8 @@ import ProjectBetterLC from './Components/Contents/Projs/ProjectBetterLC.jsx';
 import ProjectTradingViewAPI from './Components/Contents/Projs/ProjectTradingViewAPI.jsx';
 import ProjectNewzy from './Components/Contents/Projs/ProjectNewzy.jsx';
 import ProjectPortfolio from './Components/Contents/Projs/ProjectPortfolio.jsx';
+import Test from './Components/Kash.jsx';
+import Kash from './Components/Kash.jsx';
 
 const experiences = [
   {
@@ -89,7 +91,7 @@ const allItems = [
 ];
 
 const Layout = () => {
-  const [activeKey, setActiveKey] = useState(0);
+  const [activeKey, setActiveKey] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [maxSkillsScroll, setMaxSkillsScroll] = useState(8);
   const activeItem = allItems.find(item => item.key === activeKey);
@@ -166,7 +168,7 @@ const Layout = () => {
       <div className="contentContainer">
         <fieldset className="contentBox">
           <legend>Content</legend>
-          {activeItem ? activeItem.content : <div>Select an item</div>}
+          {activeItem ? activeItem.content : <Kash />}
         </fieldset>
       </div>
     </>
