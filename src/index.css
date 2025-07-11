@@ -432,6 +432,7 @@ body,
   font-weight: 900;
   animation: antiRing 600ms infinite linear;
   color: inherit;
+  font-family: sans-serif;
 }
 @keyframes antiRing {
   0% {
