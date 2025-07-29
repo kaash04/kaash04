@@ -471,3 +471,21 @@ body,
   top: 50%;
   transform: translate(-50%, -50%);
 }
+
+/* kjha */
+.Kcontainer {
+  padding: 20px;
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.Kcontainer a {
+  margin-left: 5px;
+  color: blue;
+  text-decoration: none;
+}
+
+.Kcontainer a:hover {
+  text-decoration: underline;
+}
