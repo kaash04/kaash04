@@ -31,7 +31,7 @@ const Kash = () => {
 
       <p>
         Want the boring professional stuff? Here's my
-        <a href="https://drive.google.com/file/d/1Ns_wiYsLokPGmvXucacxqObrs5lew79D/view" target="_blank" rel="noopener noreferrer" className='education-date'> Resume</a>.
+        <a href="https://drive.google.com/file/d/1okJcQkd5rU1Nh7WwS7iYzK3pyGKfZ17f/view" target="_blank" rel="noopener noreferrer" className='education-date'> Resume</a>.
       </p>
     </div>
   );
